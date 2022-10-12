@@ -1,0 +1,11 @@
+requests
+flask
+flask-cors
+flasgger
+flask_sqlalchemy
+PyJWT
+flask-marshmallow
+marshmallow_sqlalchemy
+flask_bcrypt
+flask-paginate
+pysftp==0.2.9
