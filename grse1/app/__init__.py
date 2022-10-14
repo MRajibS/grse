@@ -4,12 +4,14 @@ from flask_cors import CORS, cross_origin
 from flasgger import Swagger, swag_from
 from flask_sqlalchemy import SQLAlchemy
 from Settings.config import app_config
-from flask import Flask, request, jsonify, make_response, redirect, session
+from flask import Flask, render_template, request, jsonify, make_response, redirect, session
 from flask_marshmallow import Marshmallow
 from flask_bcrypt import Bcrypt
 from sqlalchemy import or_
 from sqlalchemy import desc
 from flask_mongoengine import MongoEngine
+import pdfkit
+
 
 mdb = MongoEngine()
 db = SQLAlchemy()
@@ -17,8 +19,9 @@ ma = Marshmallow()
 bcrypt = Bcrypt()
 
 
+
 def create_app(config_name):
-    app = Flask(__name__)
+    app = Flask(__name__, template_folder="C:\\Users\\datacore\\Desktop\\html\\grse1\\templates")
     app.config.from_object(app_config[config_name])
     app.config['SWAGGER'] = {
         'swagger': '2.0',
@@ -87,6 +90,19 @@ def create_app(config_name):
     @app.route('/')
     def index():
         return redirect('/apidocs/')
+    
+    @app.route('/<name>/<aadhar>')
+    def generate_pdf(name, aadhar):
+
+        response = render_template("user_template.html", id=aadhar, name=name)
+        res = pdfkit.from_string(response, False)
+
+        response = make_response(res)
+
+        response.headers['Content-Type'] = 'application/pdf'
+        response.headers['Content-Disposition'] = 'inline; filename=output.pdf'
+
+        return response
 
     from app.auth.admin_auth.views import admin_auth
     # from app.units.views import units_view
