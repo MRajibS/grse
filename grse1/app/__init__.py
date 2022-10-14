@@ -12,10 +12,12 @@ from sqlalchemy import desc
 from flask_mongoengine import MongoEngine
 import pdfkit
 
+
 mdb = MongoEngine()
 db = SQLAlchemy()
 ma = Marshmallow()
 bcrypt = Bcrypt()
+
 
 
 def create_app(config_name):
