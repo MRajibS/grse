@@ -89,9 +89,14 @@ def create_app(config_name):
     def index():
         return redirect('/apidocs/')
     
-    @app.route('/<name>/<designation>')
-    def pdf_print(name, designation):
-        html_template = render_template("user_template.html", name=name, designation=designation)
+    @app.route('/<name>/<designation>/<id>')
+    def pdf_print(name, designation, id):
+        data = {
+            "name":name,
+            "designation": designation,
+            "id" : id
+        }
+        html_template = render_template("user_template.html", data=data)
 
 
         res = pdfkit.from_string(html_template, False)
