@@ -23,7 +23,7 @@ class DevelopmentConfig(Config):
     # SQLALCHEMY_DATABASE_URI='sqlite:///site2.db'
     # mysql://root:Ivan@123@localhost/app_db
     # SQLALCHEMY_DATABASE_URI = 'postgresql://grse1:grse1@localhost/grse1'
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:12345@localhost/test'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:12345@localhost/grse'
     
 class TestingConfig(Config):
     """Configurations for Testing, with a separate test database."""

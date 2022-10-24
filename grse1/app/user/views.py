@@ -28,6 +28,18 @@ class Get_Employee_Details(MethodView):
             response = {"status": 'error', "message": f'{str(e)}'}
             return make_response(jsonify(response)), 200
 
+class Get_Employee_Id(MethodView):
+    @cross_origin(supports_credentials=True)
+    
+    def get(self):
+        try:
+            output = Get_All_Employee_Id()
+            response = {"status": 'success', "user_data": output}
+            return make_response(jsonify(response)), 200
+        except Exception as e:
+            response = {"status": 'error', "message": f'{str(e)}'}
+            return make_response(jsonify(response)), 200
+
 
 class ScanFingerPrint(MethodView):
     @cross_origin(supports_credentials=True)
@@ -1737,6 +1749,7 @@ class Update_User_Password(MethodView):
             
 fn_View_Users_by_RoleID = fn_View_Users_by_RoleID.as_view("fn_View_Users")
 Get_Employee_Details = Get_Employee_Details.as_view("Get_Employee_Details")
+Get_Employee_Id = Get_Employee_Id.as_view("Get_Employee_Id")
 ScanFingerPrint = ScanFingerPrint.as_view("ScanFingerPrint")
 ScanFaceData = ScanFaceData.as_view("ScanFaceData")
 ScanCard = ScanCard.as_view("ScanCard")
@@ -1754,6 +1767,7 @@ User_Search_Attendance = User_Search_Attendance.as_view("User_Search_Attendance"
 Update_User_Password = Update_User_Password.as_view("Update_User_Password")
 # # # adding routes to the Views we just created
 users_view.add_url_rule('/user/all_users/<int:role_id>/<page>', view_func=fn_View_Users_by_RoleID, methods=['POST'])
+users_view.add_url_rule('/user/employee_id/', view_func=Get_Employee_Id, methods=['GET'])
 users_view.add_url_rule('/user/employee_details/<employee_code>', view_func=Get_Employee_Details, methods=['GET'])
 users_view.add_url_rule('/user/scanFingerPrint', view_func=ScanFingerPrint, methods=['POST'])
 users_view.add_url_rule('/user/scanFaceData', view_func=ScanFaceData, methods=['POST'])

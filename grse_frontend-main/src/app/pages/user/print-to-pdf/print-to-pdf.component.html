@@ -1,0 +1,36 @@
+<h2 mat-dialog-title>Employee Details</h2>
+
+<form #userRetrieveForm="ngForm" >
+    <mat-dialog-content class="mat-typography"> 
+        <p>
+            <mat-form-field appearance="outline" ngModel name= "empId">
+                <mat-label>Select your Emp. Id</mat-label>
+                <mat-select matInput *ngFor="let option in UserIds ">
+                <mat-option value={{option}}>{{option}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </p>
+
+        <p>
+        <mat-form-field appearance="outline" ngModel name= "empName">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Employee Name">
+        </mat-form-field>
+        </p>
+
+    </mat-dialog-content>
+
+<mat-dialog-actions>
+    <section>
+        <button  mat-raised-button type="submit" color="primary" >Submit</button>
+        <button mat-raised-button color="warn">Cancel</button>
+    </section>
+</mat-dialog-actions>
+
+
+</form>
+
+
+
+
+

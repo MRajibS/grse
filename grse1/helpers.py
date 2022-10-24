@@ -175,6 +175,16 @@ def Get_Employee_details(employee_id):
         response = {"status": 'error', "message": f'{str(e)}'}
         return response
 
+def Get_All_Employee_Id():
+    try:
+        query = Users.query.with_entities(Users.id).all()
+        usr_schema = User_schema(many=True)
+        output = usr_schema.dump(query)
+        # response = {"status": 'success', "message": 'Details fetched successfully', "user_id_data": output}
+        return output
+    except Exception as e:
+        response = {"status": 'error', "message": f'{str(e)}'}
+        return response
 
 def get_terminal_information(id):
     try:
