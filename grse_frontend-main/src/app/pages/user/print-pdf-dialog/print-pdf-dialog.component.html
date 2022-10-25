@@ -1,12 +1,12 @@
 <div class="card">
-  <div class="card-header">
+  <div id="employee-table" class="card-header">
     <div class="card-title m-0">
       <h3 class="fw-bolder p-3">
         Employee Details
       </h3>
     </div>
 
-    <table class="table table-striped table-dark table-bordered ">
+    <table class="table table-dark table-bordered ">
       <tbody>
         <tr>
           <th><strong>EMP ID.</strong></th>
@@ -52,5 +52,7 @@
     </table>
 
   </div>
+
+  <button class="btn btn-success" [useExistingCss]="true" printSectionId="employee-table" ngxPrint> Print PDF</button>
 
 </div>

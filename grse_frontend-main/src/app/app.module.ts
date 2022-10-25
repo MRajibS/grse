@@ -72,6 +72,7 @@ import { UserCrformBucketComponent } from './pages/user/crforms/crform-bucket/cr
 import { AdminTerminalMonitoringComponent } from './pages/admin/terminals/terminal-monitoring/terminal-monitoring.component';
 import { AdminCrformMisdocsComponent } from './pages/admin/crforms/crform-misdocs/crform-misdocs.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgxPrintModule}  from 'ngx-print';
 import { PrintPdfDialogComponent } from './pages/user/print-pdf-dialog/print-pdf-dialog.component';
 import { UserDetailsService } from './pages/user/print-pdf-dialog/user-details.service';
 
@@ -134,7 +135,7 @@ import { UserDetailsService } from './pages/user/print-pdf-dialog/user-details.s
     AdminTerminalMonitoringComponent,
     AdminCrformMisdocsComponent,
     PrintPdfDialogComponent,
-
+    
   ],
   imports: [
     BrowserModule,
@@ -153,6 +154,7 @@ import { UserDetailsService } from './pages/user/print-pdf-dialog/user-details.s
     DpDatePickerModule,
     NgxPaginationModule,
     NgbModule,
+    NgxPrintModule
   ],
   providers: [
     DatePipe,

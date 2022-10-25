@@ -98,7 +98,6 @@
 
                 <div class="col-6 col-lg-3 mx-auto-none text-center">
                     <div class="card card-stretch gridcard">
-                       
                             <button class="btn btn-block btn-text-gray-800 btn-icon-gray-400 btn-active-color-primary bg-body flex-column justfiy-content-start align-items-start text-start w-100 p-10 text-center" data-toggle="modal" data-target="#employeeModal">
                             <span class="svg-icon svg-icon-3x mb-5">
                                 <img src="assets/images/icons/download.png" alt="">
@@ -133,7 +132,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="emptyModal()">Close</button>
-                <button type="button" class="btn btn-primary" (click)= "goToDetailsPage()">OK</button>
+                <button type="button" class="btn btn-primary"  data-dismiss="modal" (click)= "goToDetailsPage()">OK</button>
             </div>
         </div>
         
@@ -142,4 +141,4 @@
 
 
 
-<!-- <app-print-pdf-dialog *ngIf="status"></app-print-pdf-dialog> -->
+<app-print-pdf-dialog *ngIf="status"></app-print-pdf-dialog>

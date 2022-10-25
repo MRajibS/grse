@@ -50,6 +50,7 @@ export class UserHomeComponent implements OnInit {
       var baseUrl: string = 'user/details/';
       console.log(this.formValue.value.employeeId);
       this.userservice.setUserData(this.formValue.value.employeeId);
+      
       this.router.navigateByUrl(baseUrl + this.formValue.value.employeeId);
     }
   }

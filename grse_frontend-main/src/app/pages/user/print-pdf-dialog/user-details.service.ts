@@ -12,6 +12,6 @@ export class UserDetailsService implements Resolve<any>{
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     console.log("resolver", this._userservice.getUserData());
-    return this._userservice.fetchUserDetailById({ 'employeeId': this._userservice.getUserData()})
+    return this._userservice.fetchUserDetailById({ 'employeeId': this._userservice.getUserData()});
   }
 }
