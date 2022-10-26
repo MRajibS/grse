@@ -113,11 +113,11 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="employeeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade right" id="employeeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+            <div class="modal-header bg-info ">
+                <h5 class="modal-title" id="modalLabel">Employee Details</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -130,7 +130,7 @@
                     </div>
                 </form>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer bg-info">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="emptyModal()">Close</button>
                 <button type="button" class="btn btn-primary"  data-dismiss="modal" (click)= "goToDetailsPage()">OK</button>
             </div>

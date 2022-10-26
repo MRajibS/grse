@@ -10,3 +10,7 @@ a.btn:hover .svg-icon img {
     border: none !important;
     box-shadow: none !important;
 }
+
+h5{
+    color: antiquewhite;
+}
